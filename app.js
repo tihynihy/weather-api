@@ -1,22 +1,38 @@
-const axios = require('axios');
+const readline = require('readline');
+const login = require('./login');
+const getHistory = require('./history');
+const getForecast = require('./forecast');
+const getRealtime = require('./realtime');
 
-async function getRealtime(city) {
-  const realtimeOptions = {
-    method: 'GET',
-    url: 'https://weatherapi-com.p.rapidapi.com/current.json',
-    params: { q: city },
-    headers: {
-      'X-RapidAPI-Key': 'ffbdc38f00mshfa60716f35785ffp10b986jsn56a8db74c3e2',
-      'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-    }
-  };
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-  try {
-    const realtimeResponse = await axios.request(realtimeOptions);
-    console.log(realtimeResponse.data);
-  } catch (error) {
-    console.error(error);
-  }
+function prompt(question) {
+  return new Promise((resolve, reject) => {
+    rl.question(question, (answer) => {
+      resolve(answer);
+    });
+  });
 }
 
-module.exports = getRealtime;
+async function main() {
+  const loggedIn = await login();
+
+  if (!loggedIn) {
+    rl.close();
+    return;
+  }
+
+  const city = await prompt('Enter the city: ');
+  const date = await prompt('Enter the date (YYYY-MM-DD): ');
+
+  await getHistory(city, date);
+  await getForecast(city);
+  await getRealtime(city);
+
+  rl.close();
+}
+
+main();
