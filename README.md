@@ -1,6 +1,4 @@
-Certainly! Here's the revised README file content with the login part updated to mention that the login data is stored in the `local_db.json` file:
 
-```markdown
 <h1 align="center">Weather API</h1>
 
 <p align="center">
