@@ -1,4 +1,7 @@
-<h1 align="center">Weather Information Retrieval</h1>
+Certainly! Here's the revised README file content with the login part updated to mention that the login data is stored in the `local_db.json` file:
+
+```markdown
+<h1 align="center">Weather API</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/npm-v6.14.14-red" alt="npm version">
@@ -22,7 +25,7 @@
 
 ## Introduction
 
-The Weather Information Retrieval code snippet allows users to log in and retrieve weather information for a specific city and date using the WeatherAPI. This code snippet is implemented in JavaScript and utilizes the Axios library for making HTTP requests and interacting with the WeatherAPI.
+The Weather API code snippet allows users to log in and retrieve weather information for a specific city and date using the WeatherAPI. This code snippet is implemented in JavaScript and utilizes the Axios library for making HTTP requests and interacting with the WeatherAPI.
 
 ## Prerequisites
 
@@ -37,13 +40,13 @@ Follow these steps to install and set up the project:
 1. **Clone the repository**:
 
    ```shell
-   git clone https://github.com/yourusername/weather-information-retrieval.git
+   git clone https://github.com/yourusername/weather-api.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```shell
-   cd weather-information-retrieval
+   cd weather-api
    ```
 
 3. **Install dependencies**:
@@ -56,7 +59,7 @@ Follow these steps to install and set up the project:
 
 ## Testing the Code
 
-To test the Weather Information Retrieval code, follow these steps:
+To test the Weather API code, follow these steps:
 
 1. **Run the code**:
 
@@ -68,7 +71,7 @@ To test the Weather Information Retrieval code, follow these steps:
 
 2. **Login**:
 
-   When prompted, enter your username and password as per the instructions.
+   When prompted, enter your username and password. The login data is stored in the `local_db.json` file. If you need to create or modify user credentials, update the `local_db.json` file accordingly.
 
 3. **Enter city and date**:
 
@@ -94,13 +97,13 @@ The code is configured to work with the RapidAPI WeatherAPI using default API ke
 
 - **API Configuration**:
 
-   To change the API endpoint or headers, modify the `historyOptions`, `forecastOptions`, and `realtimeOptions` objects in the code. Update the URL, query parameters, and headers as required.
+   To change the API endpoint or headers, modify the `historyOptions`, `forecastOptions`, and `realtimeOptions` objects in the code. Update the URL, query parameters, and
 
-- **API Key**:
+ headers as per the API documentation.
 
-   Replace the `X-RapidAPI-Key` value in the headers with your own API key. Make sure to obtain a valid API
+- **User Data**:
 
- key from the weather service provider.
+   The user login data is stored in the `local_db.json` file. You can update this file to add or modify user credentials. Ensure the JSON structure remains valid.
 
 ## Troubleshooting
 
@@ -113,6 +116,3 @@ If you encounter any issues while installing or running the code, consider the f
 
 If the issue persists, please open an issue in the GitHub repository for assistance.
 
-## Contributing
-
-Contributions are welcome! If you have any improvements or bug fixes, feel free to open a pull request. Please ensure that your code adheres to the existing coding style and conventions.
