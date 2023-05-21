@@ -1,41 +1,26 @@
 const axios = require('axios');
-const readline = require('readline');
-const fs = require('fs');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+async function getHistory(city, date) {
+  const historyOptions = {
+    method: 'GET',
+    url: 'https://weatherapi-com.p.rapidapi.com/history.json',
+    params: {
+      q: city,
+      dt: date,
+      lang: 'en'
+    },
+    headers: {
+      'X-RapidAPI-Key': 'ffbdc38f00mshfa60716f35785ffp10b986jsn56a8db74c3e2',
+      'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+    }
+  };
 
-function prompt(question) {
-  return new Promise((resolve, reject) => {
-    rl.question(question, (answer) => {
-      resolve(answer);
-    });
-  });
-}
-
-async function login() {
-
-  const username = await prompt('Enter your username: ');
-  const password = await prompt('Enter your password: ');
-
-  let passwords;
   try {
-    passwords = JSON.parse(fs.readFileSync('local_db.json'));
+    const historyResponse = await axios.request(historyOptions);
+    console.log(historyResponse.data);
   } catch (error) {
-    console.error('Error reading passwords:', error);
-    rl.close();
-    return;
-  }
-
-  if (passwords[username] === password) {
-    console.log('Login successful.');
-    return true;
-  } else {
-    console.log('Invalid username or password. Login failed.');
-    return false;
+    console.error(error);
   }
 }
 
-module.exports = login;
+module.exports = getHistory;
