@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <strong>A code snippet to retrieve weather information using WeatherAPI</strong>
+  <strong>A code snippet to retrieve weather information using WeatherAPI - Course assignment</strong>
 </p>
 
 ## Table of Contents
