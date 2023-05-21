@@ -17,9 +17,9 @@
 - [Installation](#installation)
 - [Testing the Code](#testing-the-code)
 - [Customization and Configuration](#customization-and-configuration)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+- [RapidAPI](#rapidapi)
+
+
 
 ## Introduction
 
@@ -103,14 +103,27 @@ The code is configured to work with the RapidAPI WeatherAPI using default API ke
 
    The user login data is stored in the `local_db.json` file. You can update this file to add or modify user credentials. Ensure the JSON structure remains valid.
 
-## Troubleshooting
+## RapidAPI
+To obtain the API keys from the WeatherAPI.com on RapidAPI, follow these steps:
 
-If you encounter any issues while installing or running the code, consider the following troubleshooting steps:
+1. Visit the WeatherAPI.com RapidAPI page at https://rapidapi.com/weatherapi/api/weatherapi-com.
 
-- Ensure that you have a stable internet connection.
-- Double-check that the API key and endpoints are correctly configured.
-- Make sure you are running the code with the required Node.js version.
-- Check for any error messages or console logs for hints on the problem.
+2. Click on the "Pricing" tab to view the available pricing plans for the API.
 
-If the issue persists, please open an issue in the GitHub repository for assistance.
+3. Choose a pricing plan that suits your needs and click on the "Subscribe" button.
 
+4. Sign in to your RapidAPI account or create a new account if you don't have one.
+
+5. Complete the subscription process by providing the necessary details and payment information as per RapidAPI's instructions.
+
+6. After subscribing, you will gain access to your API keys.
+
+7. Copy the API key provided by WeatherAPI.com.
+
+8. Open your code file (e.g., `app.js`) and locate the section where API keys are used.
+
+9. Replace the existing API key `'ffbdc38f00mshfa60716f35785ffp10b986jsn56a8db74c3e2'` with your newly obtained API key from WeatherAPI.com.
+
+10. Save the code file.
+
+Now, when you run your application, it will use the updated API key to make requests to the WeatherAPI.com service.
